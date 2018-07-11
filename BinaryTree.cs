@@ -69,6 +69,11 @@ namespace BinaryTree
                     {
                         return temporaryNode.leftChild;
                     }
+                    if (temporaryNode.leftChild.Equals(null))
+                    {
+                        Console.WriteLine("This node doesn't exist in this Binary Tree, pLease try another value.");
+                        return null;
+                    }
                     Console.WriteLine("Left");
                     temporaryNode = temporaryNode.leftChild;
                 }
@@ -77,6 +82,11 @@ namespace BinaryTree
                     if (temporaryNode.rightChild.value.Equals(value))
                     {
                         return temporaryNode.rightChild;
+                    }
+                    if (temporaryNode.rightChild.Equals(null))
+                    {
+                        Console.WriteLine("This node doesn't exist in this Binary Tree, pLease try another value.");
+                        return null;
                     }
                     Console.WriteLine("Right");
                     temporaryNode = temporaryNode.rightChild;
