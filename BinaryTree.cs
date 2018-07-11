@@ -26,5 +26,33 @@ namespace BinaryTree
                 count++;
             }
         }
+        public void AddNode(T nodeValue)
+        {
+            SetRootNode(nodeValue);
+            Node<T> temporaryNode = rootNode;
+            while (true)
+            {
+                if (Comparer<T>.Default.Compare(nodeValue, temporaryNode.value) < 0)
+                {
+                    if (temporaryNode.leftChild == null)
+                    {
+                        temporaryNode.leftChild = new Node<T>(nodeValue);
+                        count++;
+                        break;
+                    }
+                    temporaryNode = temporaryNode.leftChild;
+                }
+                else if (Comparer<T>.Default.Compare(nodeValue, temporaryNode.value) >= 0)
+                {
+                    if (temporaryNode.rightChild == null)
+                    {
+                        temporaryNode.rightChild = new Node<T>(nodeValue);
+                        count++;
+                        break;
+                    }
+                    temporaryNode = temporaryNode.rightChild;
+                }
+            }
+        }
     }
 }
