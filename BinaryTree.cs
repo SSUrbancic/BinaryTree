@@ -18,5 +18,13 @@ namespace BinaryTree
             rootNode = null;
             count = 0;
         }
+        public void SetRootNode(T nodeValue)
+        {
+            if (rootNode == null)
+            {
+                rootNode = new Node<T>(nodeValue);
+                count++;
+            }
+        }
     }
 }
