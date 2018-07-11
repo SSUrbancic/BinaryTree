@@ -54,5 +54,35 @@ namespace BinaryTree
                 }
             }
         }
+        public Node<T> SearchForNode(T value)
+        {
+            Node<T> temporaryNode = rootNode;
+            while (true)
+            {
+                if (temporaryNode.value.Equals(value))
+                {
+                    return temporaryNode;
+                }
+                if (Comparer<T>.Default.Compare(value, temporaryNode.value) < 0)
+                {
+                    if (temporaryNode.leftChild.value.Equals(value))
+                    {
+                        return temporaryNode.leftChild;
+                    }
+                    Console.WriteLine("Left");
+                    temporaryNode = temporaryNode.leftChild;
+                }
+                else if (Comparer<T>.Default.Compare(value, temporaryNode.value) < 0)
+                {
+                    if (temporaryNode.rightChild.value.Equals(value))
+                    {
+                        return temporaryNode.rightChild;
+                    }
+                    Console.WriteLine("Right");
+                    temporaryNode = temporaryNode.rightChild;
+                }
+            }
+        }
     }
 }
+
