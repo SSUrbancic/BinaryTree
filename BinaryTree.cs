@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace BinaryTree
 {
-    class BinaryTree
+    class BinaryTree<T>
     {
+        //Members(HAS A)
+        Node<T> rootNode;
+        int count;
+
+        //Constructor
+        public BinaryTree()
+        {
+            rootNode = null;
+            count = 0;
+        }
     }
 }
