@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace BinaryTree
 {
-    class Node
+    public class Node<T>
     {
+        //Members
+        public Node<T> rightChild;
+        public Node<T> leftChild;
+
+        public T value;
+
+        //Constructor
+        public Node(T nodeValue)
+        {
+            value = nodeValue;
+            rightChild = null;
+            leftChild = null;
+        }
+        //Methods(CAN DO)
     }
 }
